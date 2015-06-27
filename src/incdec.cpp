@@ -1,7 +1,7 @@
 ///
 /// C++ interview quiz.
 /// 
-/// What shall be printed as 'x' value?
+/// What will be printed as 'x' value?
 ///
 
 #include <iostream>
@@ -26,7 +26,7 @@ class Derived: public Base {
     Derived()                                   { TRACE_CALL; x += 2; }
     Derived(const Derived &other): Base(other)  { TRACE_CALL; x += 3; }
     Derived(Derived &&other): Base(other)       { TRACE_CALL; x -= 2; }
-    ~Derived()                                  { TRACE_CALL; --x; }
+    virtual ~Derived()                          { TRACE_CALL; --x; }
     Derived & operator=(const Derived &)        { TRACE_CALL; x += 2; return *this; }
     Derived & operator=(Derived &&)             { TRACE_CALL; x -= 3; return *this; }
 };
